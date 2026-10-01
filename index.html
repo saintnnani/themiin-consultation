@@ -17,9 +17,9 @@
 <nav id="steps" aria-label="填写步骤"></nav>
 <form id="form" autocomplete="off" novalidate><div id="panels"></div></form>
 <section id="result" hidden aria-labelledby="resultTitle">
-<h2 id="resultTitle" tabindex="-1">核对后再发送</h2><p class="sub">전송 내용을 확인하고 직접 공유하세요</p>
-<p class="note">本页不会自动发给旅行社或诊所。发送后请对方回复确认；这不是预约确认或治疗同意。</p>
-<div class="field"><h3>旅行社用摘要 <span class="ko">여행사 전달용</span></h3>
+<h2 id="resultTitle" tabindex="-1">诊所专用资料</h2><p class="sub">병원 전달용 자료를 확인하세요</p>
+<p class="note">本页不会自动发送资料。请核对内容后，仅向诊所官方接收人提供；这不是预约确认或治疗同意。</p>
+<div class="field" hidden aria-hidden="true"><h3>旅行社用摘要 <span class="ko">여행사 전달용</span></h3>
 <p class="hint">默认仅含身份识别、预约、接送和行程。不含预算、用药或其他健康信息。</p>
 <label class="choice"><input id="includeInterests" type="checkbox"><span>我愿意额外提供所选咨询类别给旅行社，以便协调。<small class="ko">선택한 상담 분야도 여행사에 전달 · 선택사항</small></span></label>
 <p class="hint" style="margin-top:10px">勾选会向接收人披露您的医美兴趣。未勾选也可以正常发送预约摘要。</p>
@@ -27,11 +27,11 @@
 <label class="choice"><input id="approveGuide" type="checkbox"><span>我已核对上方内容，选择发送给自己的旅行社／导游。<small class="ko">받는 사람과 내용을 확인한 뒤 공유</small></span></label>
 <div class="actions"><button class="btn accent" id="shareGuide" type="button">分享摘要</button><button class="btn" id="copyGuide" type="button">复制文字</button><button class="btn" id="saveGuide" type="button">保存 TXT</button></div>
 <p class="hint">微信内建议使用“复制文字”，再粘贴到指定联系人。若浏览器允许下载，也可发送保存的 TXT 文件。请勿发到群聊。</p></div>
-<details class="field"><summary>诊所专用完整资料 · 병원 전달용</summary>
-<p>含预算和健康信息。可只在到院后展示。若需发送，请先按诊所的隐私告知与相关手续办理，并核对诊所官方接收人；不要发给旅行社。</p>
+<div class="field"><h3>诊所专用完整资料 <span class="ko">병원 전달용</span></h3>
+<p>含预算和健康信息。可只在到院后展示。若需发送，请先核对诊所官方接收人，并按诊所的隐私告知与相关手续办理。</p>
 <pre id="clinicPreview" class="review"></pre>
 <label class="choice"><input id="approveClinic" type="checkbox"><span>我已确认仅供诊所使用，知悉文件含敏感信息。</span></label>
-<div class="actions"><button class="btn" id="saveClinic" type="button">保存诊所用 TXT</button><button class="btn" id="copyClinic" type="button">复制诊所用资料</button></div></details>
+<div class="actions"><button class="btn" id="saveClinic" type="button">保存诊所用 TXT</button><button class="btn" id="copyClinic" type="button">复制诊所用资料</button></div></div>
 <p class="status" id="resultStatus" role="status" aria-live="polite"></p>
 </section>
 <details id="help"><summary>保存进度与使用说明 / 저장과 사용 안내</summary>
@@ -51,7 +51,7 @@
 const labels=['预约','兴趣','偏好','健康','发送'];
 const schema=[
 {title:'核对预约和行程',ko:'예약과 이동 일정',note:'所有时间按韩国时间填写。姓名或预约编号至少填一项；无预约也可先填咨询表。',fields:[
- ['name','姓名／称呼','성함','text'],['ref','预约编号（如有）','예약번호','text'],['agency','旅行社／导游名称或代码','여행사·가이드','text'],
+ ['name','姓名／称呼','성함','text'],['ref','预约编号（如有）','예약번호','text'],['agency','内部协调代码','내부 조율 코드','text'],
  ['status','1 当前预约状态','예약 상태','radio',['可以按时到院','需要改期','想取消','有问题需要先联系','尚未确认预约']],
  ['appointment','已与诊所约定的日期和时间','병원과 확인한 시간','datetime-local'],
  ['contact','2 方便联系的 WeChat／电话（可不填）','연락처 · 선택','text'],['contactTime','方便联系时段','연락 가능 시간','text'],
@@ -107,7 +107,7 @@ s.fields.forEach(f=>{const[id,zh,ko,type,rawOptions,limit]=f;const wrap=entry('f
 if(['radio','multi','health'].includes(type)){const opts=type==='health'?['无','有','不确定','到院私下说']:rawOptions;const choices=entry('div',{class:'choices'+(opts.length<10?' two':'')});opts.forEach((opt,idx)=>{const label=entry('label',{class:'choice'});const input=entry('input',{type:type==='multi'?'checkbox':'radio',name:id,value:opt,id:id+'_'+idx});input.addEventListener('change',()=>{if(limit&&values(id).length>limit){input.checked=false;notice('最多选择'+limit+'项。');}syncChoiceStates(id);onChange();});label.append(input,entry('span',{},opt));choices.append(label);});wrap.append(choices);}
 else{const inp=entry(type==='textarea'?'textarea':'input',{id,name:id,'aria-label':zh,maxlength:'600'});if(type!=='textarea')inp.type=type;if(type==='number'){inp.min='0';inp.step='1';inp.inputMode='numeric';if(id==='age')inp.max='120';if(id==='party'){inp.min='1';inp.max='99';}}inp.addEventListener('input',onChange);wrap.append(inp);}
 if(id==='budget')wrap.append(entry('p',{class:'hint'},'不含机票、酒店、接送。额外服务是否收费，以诊所单独报价为准。'));
-panel.append(wrap);});panels.append(panel);});
+if(id==='agency')wrap.hidden=true;panel.append(wrap);});panels.append(panel);});
 labels.forEach((label,i)=>{const b=entry('button',{type:'button','aria-label':label+' 第'+(i+1)+'步'});b.append(entry('span',{class:'stepno'},String(i+1)),entry('span',{},label));b.addEventListener('click',()=>go(i));document.getElementById('steps').append(b);});
 function values(id){return Array.prototype.slice.call(form.querySelectorAll('input[name="'+id+'"]:checked')).map(e=>e.value)}
 function syncChoiceStates(id){var nodes=id?form.querySelectorAll('input[name="'+id+'"]'):form.querySelectorAll('.choice input');Array.prototype.forEach.call(nodes,function(inp){var lab=inp.parentNode;if(lab&&lab.classList){if(inp.checked)lab.classList.add('checked');else lab.classList.remove('checked');}});}
