@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<title>THEMIIN 到院前咨询表</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23202727'/%3E%3Cpath d='M8 9h16v4h-6v12h-4V13H8z' fill='%23f58b37'/%3E%3C/svg%3E">
+<style>
+:root{--ink:#202727;--orange:#bb4c0b;--light:#fff0e3;--line:#cbd3d5;--muted:#536166;--bg:#f2f5f5;--white:#fff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,'Noto Sans CJK SC','Microsoft Yahei',sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #1b769b;outline-offset:3px}header{background:var(--ink);color:#fff;padding:20px max(18px,calc((100vw - 720px)/2));border-top:5px solid #f58b37}.brand{font-weight:800;letter-spacing:.14em;font-size:19px}.tag{font-size:13px;color:#dde4e5}h1{font-size:24px;line-height:1.35;margin:10px 0 5px}header p{margin:0;color:#e4ebeb;font-size:14px}main{max-width:760px;margin:auto;padding:18px 18px 120px}nav{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin:0 0 20px}nav button{border:0;border-bottom:3px solid #cbd3d5;background:transparent;color:#475456;padding:10px 2px;font-size:14px;min-height:55px}nav button[aria-current=step]{border-color:var(--orange);color:#913800;font-weight:750}.stepno{display:block;font-size:12px}h2{font-size:23px;margin:0 0 3px}h3{font-size:19px;line-height:1.4;margin:0 0 12px}.sub{font-size:14px;color:var(--muted);margin:0 0 18px}.note{padding:12px 14px;border-left:3px solid var(--orange);background:var(--light);font-size:14px;margin:12px 0 20px}.field{background:#fff;border:1px solid #dce2e3;border-radius:12px;padding:18px;margin:0 0 14px;min-width:0}legend{float:left;width:100%;font-size:17px;font-weight:700;padding:0 0 12px}legend+*{clear:both}.ko{font-size:13px;color:var(--muted);display:block;font-weight:400;margin-top:3px}.textlabel{display:block;font-weight:650;margin:0 0 8px}.hint{font-size:14px;color:var(--muted);margin:0 0 12px}.choices{display:grid;gap:8px}.choice{display:flex;align-items:flex-start;gap:10px;padding:12px;border:1px solid var(--line);border-radius:8px;min-height:48px;background:#fff;cursor:pointer;overflow-wrap:anywhere}.choice.checked{border-color:var(--orange);background:var(--light)}.choice input{width:20px;height:20px;margin:3px 0 0;flex-shrink:0;accent-color:var(--orange)}input:not([type=checkbox]):not([type=radio]),textarea,select{display:block;width:100%;padding:12px;border:1px solid #9aa9ad;border-radius:7px;background:#fff;color:var(--ink);min-height:48px}textarea{resize:vertical;min-height:85px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grid>div{min-width:0}.bar{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.97);border-top:1px solid var(--line);padding:12px 18px max(12px,env(safe-area-inset-bottom));z-index:2}.barinner{max-width:724px;margin:auto;display:flex;gap:10px;align-items:center}.bar button{flex:1}.btn{border-radius:8px;border:1px solid var(--ink);padding:12px 16px;min-height:48px;background:#fff;color:var(--ink);font-weight:650}.primary{background:var(--ink);color:#fff}.accent{background:var(--orange);border-color:var(--orange);color:#fff}.actions{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.actions .btn{flex:1;min-width:130px}details{margin:18px 0}summary{cursor:pointer;font-weight:650;min-height:44px;padding:8px 0}details p{font-size:14px;color:var(--muted)}.review{white-space:pre-wrap;background:#fff;border:1px solid var(--line);padding:15px;border-radius:8px;font:14px/1.8 system-ui,sans-serif;overflow-wrap:anywhere}.status{padding:10px 0;color:#7b3106;font-size:14px;min-height:24px}.tagline{font-size:13px;color:var(--muted)}[hidden]{display:none!important}.mutedbtn{border:0;background:none;text-decoration:underline;color:var(--muted);padding:10px;font-size:14px}dialog{border:0;border-radius:14px;max-width:560px;width:calc(100% - 32px);padding:22px;max-height:90dvh;overflow:auto}dialog::backdrop{background:#152021a6}.nowrap{white-space:nowrap}@media(min-width:640px){.choices.two{grid-template-columns:1fr 1fr}}@media(max-width:380px){main{padding-inline:12px}.field{padding:14px}h1{font-size:22px}.grid{grid-template-columns:1fr}.bar{padding-inline:12px}}@media print{header,nav,.bar,.actions,details,button,.no-print{display:none!important}body,main{background:white;padding:0;margin:0;max-width:100%}.review{border:0;font-size:11pt}}
+</style>
+</head>
+<body>
+<header><div class="brand">THEMIIN <span class="tag">JEJU</span></div><h1>到院前咨询准备表</h1><p>约10分钟 · 本人填写 · 填写不代表必须消费</p></header>
+<main>
+<noscript><p class="note">当前预览不支持填写。请下载本文件，用 Chrome、Safari 或 Edge 浏览器打开。 / 파일을 다운로드해 브라우저에서 열어 주세요.</p></noscript>
+<nav id="steps" aria-label="填写步骤"></nav>
+<form id="form" autocomplete="off" novalidate><div id="panels"></div></form>
+<section id="result" hidden aria-labelledby="resultTitle">
+<h2 id="resultTitle" tabindex="-1">核对后再发送</h2><p class="sub">전송 내용을 확인하고 직접 공유하세요</p>
+<p class="note">本页不会自动发给旅行社或诊所。发送后请对方回复确认；这不是预约确认或治疗同意。</p>
+<div class="field"><h3>旅行社用摘要 <span class="ko">여행사 전달용</span></h3>
+<p class="hint">默认仅含身份识别、预约、接送和行程。不含预算、用药或其他健康信息。</p>
+<label class="choice"><input id="includeInterests" type="checkbox"><span>我愿意额外提供所选咨询类别给旅行社，以便协调。<small class="ko">선택한 상담 분야도 여행사에 전달 · 선택사항</small></span></label>
+<p class="hint" style="margin-top:10px">勾选会向接收人披露您的医美兴趣。未勾选也可以正常发送预约摘要。</p>
+<pre id="guidePreview" class="review"></pre>
+<label class="choice"><input id="approveGuide" type="checkbox"><span>我已核对上方内容，选择发送给自己的旅行社／导游。<small class="ko">받는 사람과 내용을 확인한 뒤 공유</small></span></label>
+<div class="actions"><button class="btn accent" id="shareGuide" type="button">分享摘要</button><button class="btn" id="copyGuide" type="button">复制文字</button><button class="btn" id="saveGuide" type="button">保存 TXT</button></div>
+<p class="hint">微信内建议使用“复制文字”，再粘贴到指定联系人。若浏览器允许下载，也可发送保存的 TXT 文件。请勿发到群聊。</p></div>
+<details class="field"><summary>诊所专用完整资料 · 병원 전달용</summary>
+<p>含预算和健康信息。可只在到院后展示。若需发送，请先按诊所的隐私告知与相关手续办理，并核对诊所官方接收人；不要发给旅行社。</p>
+<pre id="clinicPreview" class="review"></pre>
+<label class="choice"><input id="approveClinic" type="checkbox"><span>我已确认仅供诊所使用，知悉文件含敏感信息。</span></label>
+<div class="actions"><button class="btn" id="saveClinic" type="button">保存诊所用 TXT</button><button class="btn" id="copyClinic" type="button">复制诊所用资料</button></div></details>
+<p class="status" id="resultStatus" role="status" aria-live="polite"></p>
+</section>
+<details id="help"><summary>保存进度与使用说明 / 저장과 사용 안내</summary>
+<p>本文件离线运行，不自动上传答案、不自动保存在浏览器。刷新或关闭页面可能丢失填写内容。需要稍后继续时，可自行保存草稿。草稿含健康信息且未加密，只保存在本人设备，使用完请删除。</p>
+<div class="actions"><button type="button" class="btn" id="saveDraft">保存本机草稿</button><button type="button" class="btn" id="loadDraft">读取草稿</button></div>
+<input id="draftFile" type="file" accept=".json,application/json" hidden>
+<p>推荐通过 HTTPS 网页链接在微信中打开。若微信版本限制复制、下载或选取文件，请点右上角“…”并选择“在浏览器打开”。直接把 HTML 当聊天附件发送时，微信可能只显示文件预览而不运行页面功能。</p>
+<p>旅行社请只分发空白文件。预约前一天确认时间，出发前再次确认。未回复应联系核实，不自动取消。完整健康资料由患者直接交诊所。</p>
+<p>병원 배포 전 확인: 예약금·취소 규정과 공식 연락처는 별도 안내하세요. 의료진 문항 검토 및 개인정보·민감정보 처리 절차를 적용하세요. 자동 접수·예약 확정 기능은 없습니다.</p>
+<button type="button" class="mutedbtn" id="resetAll">清空本次填写 / 작성내용 지우기</button>
+</details><p id="globalStatus" class="status" role="status" aria-live="polite"></p>
+</main>
+<div class="bar"><div class="barinner"><button type="button" class="btn" id="previous">上一步</button><button type="button" class="btn primary" id="next">下一步</button></div></div>
+<dialog id="fallbackDialog"><h3>复制下面的内容</h3><p class="hint">自动复制不可用。长按文字并全选复制，再粘贴给正确的联系人。</p><textarea id="fallbackText" rows="12" readonly></textarea><button type="button" class="btn" id="closeDialog">关闭</button></dialog>
+<script>
+'use strict';
+const labels=['预约','兴趣','偏好','健康','发送'];
+const schema=[
+{title:'核对预约和行程',ko:'예약과 이동 일정',note:'所有时间按韩国时间填写。姓名或预约编号至少填一项；无预约也可先填咨询表。',fields:[
+ ['name','姓名／称呼','성함','text'],['ref','预约编号（如有）','예약번호','text'],['agency','旅行社／导游名称或代码','여행사·가이드','text'],
+ ['status','1 当前预约状态','예약 상태','radio',['可以按时到院','需要改期','想取消','有问题需要先联系','尚未确认预约']],
+ ['appointment','已与诊所约定的日期和时间','병원과 확인한 시간','datetime-local'],
+ ['contact','2 方便联系的 WeChat／电话（可不填）','연락처 · 선택','text'],['contactTime','方便联系时段','연락 가능 시간','text'],
+ ['reminder','希望收到本次预约提醒吗','예약 알림','radio',['希望收到','不需要']],
+ ['transport','3 如何到院','이동 방법','radio',['已安排接送','需要确认接送','自行前往']],
+ ['pickupTime','接送／出发时间','픽업·출발','datetime-local'],['pickupPlace','上车地点（不填房间号）','픽업 장소','text'],['party','同行人数（含本人）','동행 인원','number'],
+ ['companion','同行人安排','동행인','radio',['本人独自前往','仅陪同','同行人也希望单独咨询']],
+ ['duration','4 可留给诊所多少时间','진료 가능 시간','radio',['1小时以内','1-2小时','2-3小时','3小时以上','尚未确定']],
+ ['leaveBy','必须离院时间','병원 출발 필요 시간','datetime-local'],['departure','离开济州的日期和时间','제주 출발','datetime-local'],
+ ['obstacles','5 哪些事项可能影响到院','방문 장애 요인','multi',['时间冲突','交通／接送','费用尚不清楚','同行人安排','还没想好','希望先与诊所私下沟通','无']],
+ ['bookingNote','给预约负责人的其他说明（不填病史）','예약 담당자에게 전할 말','textarea'],
+ ['commit','如需改期、取消或可能迟到','변경·취소 안내 확인','radio',['会尽早联系诊所或接送负责人','需要对方先联系我']]
+]},
+{title:'您想了解什么',ko:'고민과 시술 관심',note:'选择仅表示想咨询，不是购买或治疗同意。请选真实关注的内容，医生会面诊评估。',fields:[
+ ['concerns','6 最想改善的方面（最多3项）','주요 고민','multi',['面部松弛／下颌线','细纹／皱纹','眼周状态','面部凹陷／比例','干燥／肤质','毛孔／痘印／痘疤','色斑／肤色不均','泛红','颈部／手部状态','身体轮廓','多余毛发／出汗','其他'],3],
+ ['priority','其中最重要的一项','최우선 고민','text'],
+ ['interests','7 想了解的治疗类别','시술 관심 분야','multi',['超声／射频紧肤：Ultherapy、Sofwave、Thermage、TenTherma、SHURINK','面部／身体设备治疗：ONDA、InMode','肉毒毒素：表情纹、咬肌、出汗等','填充与轮廓：玻尿酸、Radiesse、Sculptra','肤质与注射：Rejuran、Juvelook 等','激光／微针射频：色斑、泛红、毛孔、痘疤、Sylfirm 等','脱毛或其他皮肤问题','线雕或面部提升手术咨询','眼周／鼻部／人中手术咨询','胸部或其他手术咨询','不确定，请医生按主要困扰评估'],0],
+ ['areas','希望咨询的部位／其他项目','희망 부위·기타','text'],
+ ['original','8 已预约、已有意向或想比较的项目','기존 관심 항목','text'],['question','最想问医生的问题','의사에게 궁금한 점','textarea']
+]},
+{title:'预算与方案偏好',ko:'예산과 상담 설계',note:'这一部分仅供诊所，永不加入旅行社摘要。预算不是报价，也不会自动成为收费金额。',fields:[
+ ['budget','9 可考虑的医疗费总预算（韩元，含适用税费）','의료비 총예산 · 선택','radio',['50万韩元以下','50万-不足100万韩元','100万-不足200万韩元','200万-不足300万韩元','300万-不足500万韩元','500万韩元及以上','先看分项报价','到院后私下沟通']],
+ ['cap','明确预算上限（韩元，可不填）','예산 상한','number'],
+ ['proposal','10 希望怎样比较方案','추가 제안 의향','radio',['仅讨论原预约项目，不额外推荐','在预算内比较基本方案和可选增加项目','分阶段考虑，本次只做合适的一部分','可解释超预算选项，但先说明理由、风险和新增费用']],
+ ['values','11 最看重什么（最多3项）','선택 기준','multi',['医生评估','自然变化','疼痛管理','恢复期','总费用透明','治疗时间','隐私','中文沟通／回国后随访'],3],
+ ['downtime','12 能安排的恢复时间','회복 일정','radio',['不方便出现明显可见变化','1-3天','4-7天','7天以上','先了解风险再决定']],
+ ['eventDate','重要活动／拍照日期（如有）','중요 일정','date'],
+ ['worries','13 希望提前解释哪些顾虑','상담 우려사항','multi',['疼痛／针头','肿胀／淤青','效果不自然','费用增加','沟通困难','回国后问题处理','以往体验不佳','无']],
+ ['services','14 想了解哪些额外服务及单独费用','부가서비스 관심','multi',['不需要','专人中文协调','私密候诊','接送','同行人协助','回国后中文随访']],
+ ['decision','15 本次咨询后的打算','결정 준비도','radio',['先咨询再决定','合适且时间允许时考虑治疗','另约治疗日期','比较后再决定','需要与家人讨论']]
+]},
+{title:'健康信息',ko:'병원에만 전달할 건강정보',note:'可全部留到院后填写。请按诊所的隐私告知与相关手续办理；本表不是治疗或麻醉同意。不要自行停药或禁食。',fields:[
+ ['defer','健康信息填写方式','건강정보 작성 선택','radio',['到院后私下填写','现在由本人填写']],
+ ['age','年龄','나이','number'],
+ ['allergy','16 药物、麻醉药或其他过敏','알레르기','health'],
+ ['disease','17 正在治疗的疾病或重要病史','질환·병력','health'],
+ ['meds','18 正在使用药物、注射药或保健品','복용·주사약·보조제','health'],
+ ['implant','19 心脏起搏器、电子装置、金属等植入物','삽입물','health'],
+ ['reaction','20 以往治疗／麻醉后异常反应或疤痕增生','이상반응·흉터','health'],
+ ['infection','21 目前发热或治疗部位有伤口、感染、疱疹','발열·상처·감염','health'],
+ ['pregnancy','22 怀孕／哺乳情况','임신·수유','radio',['无','怀孕／可能怀孕','哺乳','不适用','到院私下说']],
+ ['history','23 拟治疗部位以前做过的治疗','기존 시술','multi',['无','填充','肉毒毒素','线雕','手术','激光／设备','不确定']],
+ ['healthDetails','请补充药名、过敏反应、疾病，以及既往治疗的项目／部位／时间','건강정보 상세','textarea']
+]}
+];
+const form=document.getElementById('form'),panels=document.getElementById('panels');
+let current=0,dirty=false,guideText='',clinicText='';
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const entry=(tag,attrs={},text)=>{const e=document.createElement(tag);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);if(text!==undefined)e.textContent=text;return e};
+const allFields=schema.flatMap(s=>s.fields);const fieldMap=new Map(allFields.map(f=>[f[0],f]));
+schema.forEach((s,i)=>{const panel=entry('section',{id:'panel'+i,'aria-labelledby':'title'+i});panel.hidden=i!==0;panel.append(entry('h2',{id:'title'+i,tabindex:'-1'},s.title),entry('p',{class:'sub'},s.ko),entry('p',{class:'note'},s.note));
+s.fields.forEach(f=>{const[id,zh,ko,type,rawOptions,limit]=f;const wrap=entry('fieldset',{class:'field','data-field':id});const legend=entry('legend',{},zh);legend.append(entry('span',{class:'ko'},ko));wrap.append(legend);
+if(['radio','multi','health'].includes(type)){const opts=type==='health'?['无','有','不确定','到院私下说']:rawOptions;const choices=entry('div',{class:'choices'+(opts.length<10?' two':'')});opts.forEach((opt,idx)=>{const label=entry('label',{class:'choice'});const input=entry('input',{type:type==='multi'?'checkbox':'radio',name:id,value:opt,id:id+'_'+idx});input.addEventListener('change',()=>{if(limit&&values(id).length>limit){input.checked=false;notice('最多选择'+limit+'项。');}syncChoiceStates(id);onChange();});label.append(input,entry('span',{},opt));choices.append(label);});wrap.append(choices);}
+else{const inp=entry(type==='textarea'?'textarea':'input',{id,name:id,'aria-label':zh,maxlength:'600'});if(type!=='textarea')inp.type=type;if(type==='number'){inp.min='0';inp.step='1';inp.inputMode='numeric';if(id==='age')inp.max='120';if(id==='party'){inp.min='1';inp.max='99';}}inp.addEventListener('input',onChange);wrap.append(inp);}
+if(id==='budget')wrap.append(entry('p',{class:'hint'},'不含机票、酒店、接送。额外服务是否收费，以诊所单独报价为准。'));
+panel.append(wrap);});panels.append(panel);});
+labels.forEach((label,i)=>{const b=entry('button',{type:'button','aria-label':label+' 第'+(i+1)+'步'});b.append(entry('span',{class:'stepno'},String(i+1)),entry('span',{},label));b.addEventListener('click',()=>go(i));document.getElementById('steps').append(b);});
+function values(id){return Array.prototype.slice.call(form.querySelectorAll('input[name="'+id+'"]:checked')).map(e=>e.value)}
+function syncChoiceStates(id){var nodes=id?form.querySelectorAll('input[name="'+id+'"]'):form.querySelectorAll('.choice input');Array.prototype.forEach.call(nodes,function(inp){var lab=inp.parentNode;if(lab&&lab.classList){if(inp.checked)lab.classList.add('checked');else lab.classList.remove('checked');}});}
+function value(id){const f=fieldMap.get(id);if(!f)return '';return ['radio','health','multi'].includes(f[3])?values(id).join('；'):(form.elements.namedItem(id)?.value||'').trim()}
+function onChange(){dirty=true;document.getElementById('approveGuide').checked=false;document.getElementById('approveClinic').checked=false;healthVisibility();if(current===4)refresh();}
+function healthVisibility(){const show=value('defer')==='现在由本人填写';schema[3].fields.forEach(f=>{if(f[0]!=='defer')document.querySelector('[data-field="'+f[0]+'"]').hidden=!show;});}
+function notice(msg,result=false){document.getElementById(result?'resultStatus':'globalStatus').textContent=msg;}
+function go(i){current=Math.max(0,Math.min(4,i));for(let k=0;k<4;k++)document.getElementById('panel'+k).hidden=k!==current;form.hidden=current===4;document.getElementById('result').hidden=current!==4;document.querySelectorAll('#steps button').forEach((b,k)=>{if(k===current)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');});document.getElementById('previous').hidden=current===0;document.getElementById('next').hidden=current===4;document.getElementById('next').textContent=current===3?'核对并准备发送':'下一步';if(current===4)refresh();healthVisibility();window.scrollTo(0,0);document.getElementById(current===4?'resultTitle':'title'+current).focus({preventScroll:true});}
+document.getElementById('previous').onclick=()=>go(current-1);document.getElementById('next').onclick=()=>go(current+1);form.onsubmit=e=>e.preventDefault();
+const printable=v=>v||'未填写 / 미기재';
+function line(id){const f=fieldMap.get(id);let v=value(id);if(f[3]==='datetime-local')v=v.replace('T',' ');return f[1]+' / '+f[2]+'：'+printable(v);}
+function bookingLines(){return ['name','ref','agency','status','appointment','contact','contactTime','reminder','transport','pickupTime','pickupPlace','party','companion','duration','leaveBy','departure','obstacles','bookingNote','commit'].map(line);}
+function refresh(){const time=new Date().toLocaleString('zh-CN',{timeZone:'Asia/Seoul',hour12:false});guideText=['THEMIIN 旅行社预约协调摘要 / 여행사 예약 조율 요약','生成时间（韩国时间）：'+time,'这是患者填写的信息；时间变更与预约须由诊所确认。','',...bookingLines()];if(document.getElementById('includeInterests').checked)guideText.push('','本人选择提供的咨询类别 / 본인 선택 공유',line('interests'));
+guideText.push('','不含预算、病史、用药或诊所专用回答。','请核对联系人后发送，收到后请回复确认。');guideText=guideText.join('\n');
+clinicText=['THEMIIN 诊所专用资料 / 병원 전용','生成时间（韩国时间）：'+time,'含个人与健康信息，请勿发给旅行社／旅游群。','不是治疗同意或预约确认。'];schema.forEach((s,i)=>{clinicText.push('\n【'+s.title+'】');if(i===3&&value('defer')!=='现在由本人填写'){clinicText.push('健康信息：到院后由医护私下确认；未填写不表示无病史。');return;}s.fields.forEach(f=>clinicText.push(line(f[0])));});clinicText=clinicText.join('\n');document.getElementById('guidePreview').textContent=guideText;document.getElementById('clinicPreview').textContent=clinicText;}
+document.getElementById('includeInterests').onchange=()=>{document.getElementById('approveGuide').checked=false;refresh();};
+function ready(kind){if(!value('name')&&!value('ref')){notice('请先填写姓名／称呼或预约编号，便于对方识别。',true);go(0);notice('请填写姓名／称呼或预约编号。');return false;}if(kind==='guide'&&!value('status')){go(0);notice('请选择当前预约状态；还未预约可选“尚未确认预约”。');return false;}for(const id of (kind==='guide'?['party']:['party','cap',...(value('defer')==='现在由本人填写'?['age']:[])])){const input=form.elements.namedItem(id);if(input.value&&!input.checkValidity()){go(id==='party'?0:id==='cap'?2:3);notice('请检查数字范围：人数1-99，年龄0-120，预算为非负整数。');input.focus();return false;}}if(!document.getElementById(kind==='guide'?'approveGuide':'approveClinic').checked){notice(kind==='guide'?'请先核对摘要并勾选发送确认。':'请先确认完整资料仅供诊所使用。',true);return false;}refresh();return true;}
+function download(text,name,type){type=type||'text/plain;charset=utf-8';try{var blob=new Blob(['\ufeff',text],{type:type});var URLx=window.URL||window.webkitURL;if(!URLx||!URLx.createObjectURL)throw new Error('no blob url');var url=URLx.createObjectURL(blob);var a=entry('a',{href:url,download:name});document.body.appendChild(a);if(typeof a.click==='function')a.click();else window.location.href=url;setTimeout(function(){if(a.parentNode)a.parentNode.removeChild(a);URLx.revokeObjectURL(url);},60000);}catch(e){fallbackText(text,'当前微信环境无法直接下载。请长按复制以下内容，或点右上角“…”在浏览器打开后再保存。');}}
+const stamp=()=>new Date().toISOString().replace(/[:.]/g,'-').slice(0,19);
+function fallbackText(text,msg){var ta=document.getElementById('fallbackText'),dialog=document.getElementById('fallbackDialog');ta.value=text;notice(msg||'请长按并复制下面的文字。',true);if(dialog.showModal){try{dialog.showModal();}catch(e){dialog.setAttribute('open','open');}}else{dialog.setAttribute('open','open');}ta.focus();ta.select();}
+async function copy(text){try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);notice('已复制。请粘贴给正确的微信联系人；本页面没有自动发送。',true);return;}}catch(e){}try{var ta=document.createElement('textarea');ta.value=text;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();var ok=document.execCommand&&document.execCommand('copy');document.body.removeChild(ta);if(ok){notice('已复制。请粘贴给正确的微信联系人；本页面没有自动发送。',true);return;}}catch(e){}fallbackText(text,'微信未允许自动复制。请长按下面的文字并选择“全选→复制”。');}
+document.getElementById('copyGuide').onclick=()=>{if(ready('guide'))copy(guideText);};document.getElementById('copyClinic').onclick=()=>{if(ready('clinic'))copy(clinicText);};
+document.getElementById('saveGuide').onclick=()=>{if(ready('guide')){download(guideText,'THEMIIN_Travel_Summary_'+stamp()+'.txt');notice('已请求保存旅行社用 TXT。请在下载列表确认后，手动发给联系人。',true);}};
+document.getElementById('saveClinic').onclick=()=>{if(ready('clinic')){download(clinicText,'THEMIIN_Clinic_Private_'+stamp()+'.txt');notice('已请求保存诊所专用 TXT。含敏感信息，请勿转给旅行社。',true);}};
+document.getElementById('shareGuide').onclick=async()=>{if(!ready('guide'))return;var ua=navigator.userAgent||'';var inWeChat=/MicroMessenger/i.test(ua);if(inWeChat){notice('微信内请复制摘要后粘贴给指定联系人。',true);await copy(guideText);return;}if(navigator.share){try{await navigator.share({title:'THEMIIN 预约协调摘要',text:guideText});notice('分享窗口已结束。请确认是否发送成功，并等待对方回复。',true);return;}catch(e){if(e.name==='AbortError'){notice('已取消分享，未自动发送。',true);return;}}}await copy(guideText);};
+document.getElementById('closeDialog').onclick=()=>{var d=document.getElementById('fallbackDialog');if(d.close)d.close();else d.removeAttribute('open');};
+function getDraft(){const answers={};allFields.forEach(f=>{answers[f[0]]=f[3]==='multi'?values(f[0]):value(f[0]);});return {format:'THEMIIN-previsit-v1',answers};}
+document.getElementById('saveDraft').onclick=()=>{if(!confirm('草稿可能含预算和健康信息，文件未加密。仅保存到本人设备，勿发送给旅行社。继续保存？'))return;download(JSON.stringify(getDraft(),null,2),'THEMIIN_Private_Draft_'+stamp()+'.json','application/json;charset=utf-8');notice('已请求保存草稿。请确认下载完成；不要将草稿发给旅行社。');};
+document.getElementById('loadDraft').onclick=()=>document.getElementById('draftFile').click();
+document.getElementById('draftFile').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{if(file.size>128000)throw Error('size');const raw=await new Promise((resolve,reject)=>{if(file.text){file.text().then(resolve,reject);return;}var r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsText(file,'utf-8');});const parsed=JSON.parse(String(raw).replace(/^\uFEFF/,''));if(parsed.format!=='THEMIIN-previsit-v1'||!parsed.answers||typeof parsed.answers!=='object')throw Error('format');if(dirty&&!confirm('读取草稿会替换当前填写，继续吗？'))return;form.reset();allFields.forEach(f=>{const[id,,,,opts,limit]=f;const v=parsed.answers[id];if(f[3]==='multi'){const selected=Array.isArray(v)?v.filter(x=>opts.includes(x)).slice(0,limit||opts.length):[];form.querySelectorAll('input[name="'+id+'"]').forEach(el=>el.checked=selected.includes(el.value));}else if(['radio','health'].includes(f[3])){form.querySelectorAll('input[name="'+id+'"]').forEach(el=>el.checked=el.value===v);}else if(typeof v==='string'){form.elements.namedItem(id).value=v.slice(0,600);}});document.getElementById('includeInterests').checked=false;onChange();go(0);notice('已读取草稿。分享前请再次核对。');}catch{notice('无法读取。请选择本表导出的 JSON 草稿文件（128 KB以内）。');}finally{e.target.value='';}};
+document.getElementById('resetAll').onclick=()=>{if(!confirm('清空当前填写？已下载或已发送的文件不会被删除。'))return;form.reset();document.getElementById('includeInterests').checked=false;document.getElementById('approveGuide').checked=false;document.getElementById('approveClinic').checked=false;document.getElementById('fallbackText').value='';dirty=false;refresh();go(0);notice('本页面已清空。请自行删除不再需要的下载文件。');};
+window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue='';}});
+syncChoiceStates();
+go(0);
+</script>
+</body></html>

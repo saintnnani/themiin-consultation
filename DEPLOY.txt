@@ -1,0 +1,22 @@
+THEMIIN WeChat Consultation - GitHub Pages deployment
+
+Repository name:
+themiin-consultation
+
+Upload these files to the repository root:
+- index.html       : 중국 고객용 사전 문진
+- staff.html       : 병원 내부 한국어 인계 카드
+- .nojekyll
+
+GitHub Pages:
+Settings > Pages > Deploy from a branch
+Branch: main
+Folder: / (root)
+
+Customer URL:
+https://saintnnani.github.io/themiin-consultation/
+
+Staff URL:
+https://saintnnani.github.io/themiin-consultation/staff.html
+
+The QR PNG files supplied separately already encode these URLs.
